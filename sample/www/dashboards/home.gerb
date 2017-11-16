@@ -1,0 +1,21 @@
+<% content "title" { %>Dashboard<% } %>
+
+<div class="row">
+  <div class="col-sm-3">
+    <div data-id="switches" data-view="Switches" data-title="Switches" data-text="Some Text here" class="h-100"></div>
+  </div>
+  <div class="col-sm">
+    <div class="row">
+      <!-- <div class="col-sm">
+        <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new dashboard."></div>
+      </div> -->
+      <!-- <div class="col-sm">
+        <div data-id="command" data-view="Command" data-name="firefox"></div>
+      </div> -->
+      <div data-id="apps" data-view="apps" data-title="Apps"></div>
+      
+    </div>
+  </div>
+</div>
+
+
