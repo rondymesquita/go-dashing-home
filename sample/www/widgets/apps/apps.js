@@ -1,40 +1,41 @@
 var __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-Dashing.Command = (function(_super) {
-  __extends(Command, _super);
+Dashing.Apps = (function(_super) {
+  __extends(Apps, _super);
 
-  function Command() {
-    return Command.__super__.constructor.apply(this, arguments);
+  function Apps() {
+    return Apps.__super__.constructor.apply(this, arguments);
   }
 
-  Command.prototype.sendrequest = function(){
+  Apps.prototype.sendRequest = function(){
+    
+  }
+
+  Apps.prototype.ready = function() {
+
     self = this
 
     request = $.ajax({
-      url: "/command/exec",
-      type: "POST",
-      data: {commands: ['echo "====> hello"', 'firefox']},
+      url: "/assets/json/services.json",
+      type: "GET",
       dataType: "json"
     });
 
     request.done(function(data){
       console.log(data)
-      self.set('button', 'Fulano');
+      self.set("appList", data)
     });
 
     request.fail(function(data){
       console.log("fail")
       console.log(data)
     });
-  }
 
-  Command.prototype.ready = function() {
-    console.log(this.get("name"))
-    // name = this.get("name");
-    // this.set("src", "/assets/images/" + name + ".png")
+    name = this.get("name");
+    this.set("src", "/assets/images/" + name + ".png")
   };
 
-  return Command;
+  return Apps;
 
 })(Dashing.Widget);

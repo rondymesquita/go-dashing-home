@@ -1,13 +1,51 @@
 [
         {
                 "name": "firefox",
-                "icon": "firefox.png",
-                "color": "#ff9400"
+                "icon": "/assets/images/firefox.png",
+                "color": "#ff9400",
+                "commands": ["firefox"]
+        },
+        {
+                "name": "pluma",
+                "icon": "/assets/images/logo.png",
+                "color": "#222",
+                "commands": ["pluma"]
         },
         {
                 "name": "firefox",
-                "icon": "firefox.png",
-                "color": "#ff9400"
+                "icon": "/assets/images/firefox.png",
+                "color": "#ff9400",
+                "commands": ["firefox"]
+        },
+        {
+                "name": "pluma",
+                "icon": "/assets/images/logo.png",
+                "color": "#222",
+                "commands": ["pluma"]
+        },
+        {
+                "name": "firefox",
+                "icon": "/assets/images/firefox.png",
+                "color": "#ff9400",
+                "commands": ["firefox"]
+        },
+        {
+                "name": "pluma",
+                "icon": "/assets/images/logo.png",
+                "color": "#222",
+                "commands": ["pluma"]
+        },
+        {
+                "name": "firefox",
+                "icon": "/assets/images/firefox.png",
+                "color": "#ff9400",
+                "commands": ["firefox"]
+        },
+        {
+                "name": "pluma",
+                "icon": "/assets/images/logo.png",
+                "color": "#222",
+                "commands": ["pluma"]
         }
 
 ]
