@@ -635,7 +635,7 @@
    * @return {Array} An array of elements.
    */
 
-  Navigator.prototype.elements = function () {
+  Navigator.prototype.elementz = function () {
     var children = [];
     for (var i = this.$container.children.length; i--;) {
       // Skip comment nodes on IE8
@@ -646,17 +646,19 @@
     console.log(children);
     return children;
   };
-  // Navigator.prototype.elementsz = function () {
-  //     var children = [];
-  //     // var els = document.querySelectorAll('[data-navigable]:not(.selected)');
-  //     // for (var i = els.length; i--;) {
-  //     //     children.unshift(els[i]);
-  //     // }
-  //     children = [].slice.call(document.querySelectorAll("[data-navigable]"));
-  //
-  //     console.log(children);
-  //     return children;
-  // };
+  Navigator.prototype.elements = function () {
+      var children = [];
+      for (var i = this.$container.querySelectorAll(".data-navigable").length; i--;) {
+          // Skip comment nodes on IE8
+          if (this.$container.querySelectorAll(".data-navigable")[i].nodeType !== 8) {
+              children.unshift(this.$container.querySelectorAll(".data-navigable")[i]);
+          }
+      }
+      // children = [].slice.call(this.$container.querySelectorAll(".data-navigable"));
+
+      console.log(children);
+      return children;
+  };
 
   /**
    * Return an array of navigable elements after an offset.
