@@ -23,7 +23,7 @@ Dashing.Apps = (function(_super) {
     });
 
     request.done(function(data){
-      console.log(data)
+      // console.log(data)
       self.set("appList", data)
     });
 

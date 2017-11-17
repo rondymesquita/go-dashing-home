@@ -8,7 +8,8 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color: #222;
+//$background-color: #222;
+$background-color: #eee;
 $text-color: #fff;
 
 $background-warning-color-1: #e82711;
@@ -63,6 +64,10 @@ b, strong {
 }
 .row{
   margin-bottom: 12px;
+}
+
+.selected, .active{
+    border:2px solid red;
 }
 
 // a {

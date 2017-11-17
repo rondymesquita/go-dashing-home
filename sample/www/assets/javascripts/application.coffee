@@ -5,6 +5,7 @@
 #= require_directory .
 #= require_directory ./bootstrap
 #= require_directory ./shared
+#= require_directory ./dom-navigator
 #= require_tree ../../widgets
 
 console.log("Yeah! The dashboard has started!")
