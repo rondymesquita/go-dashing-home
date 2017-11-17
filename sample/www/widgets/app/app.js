@@ -14,7 +14,7 @@ Dashing.App = (function(_super) {
     request = $.ajax({
       url: "/command/exec",
       type: "POST",
-      data: {commands: ['echo "====> hello"', 'firefox']},
+      data: "{\"Commands\": [[\"echo\", \"hello\"], [\"firefox\"]]}",
       dataType: "json"
     });
 
