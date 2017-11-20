@@ -34,6 +34,8 @@ Dashing.Apps = (function(_super) {
 
     name = this.get("name");
     this.set("src", "/assets/images/" + name + ".png")
+
+
   };
 
   return Apps;

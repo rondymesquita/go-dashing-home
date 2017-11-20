@@ -269,7 +269,8 @@
         var self = this;
         this.$mouseenterHandler = function (event) {
             self.deselectAll();
-            self.$selected = event.target
+            // self.$selected = event.target
+            self.select(event.target, null);
             self.$container.classList.add("mouse-over")
         };
         this.$mouseleaveHandler = function (event) {
@@ -581,6 +582,7 @@
         }
         // Scroll to given element.
         this.scrollTo(el, direction);
+        el.scrollIntoView({behavior: "smooth", block: "center"});
         // Select given element.
         addClass(el, this.$options.selected);
         this.$selected = el;
