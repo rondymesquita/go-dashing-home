@@ -10,7 +10,10 @@
 </div>
 
 <script>
-  var appGrid = document.querySelector("#app-grid");
-  new DomNavigator(appGrid);
+$(document).ready(function(){
+    // var appGrid = document.querySelector("#app-grid");
+    // new DomNavigator(appGrid);
+});
+
 </script>
 

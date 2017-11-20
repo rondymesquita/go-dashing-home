@@ -30,9 +30,8 @@ Dashing.App = (function(_super) {
   }
 
   App.prototype.ready = function() {
-    console.log(this.get("name"))
-    // name = this.get("name");
-    // this.set("src", "/assets/images/" + name + ".png")
+      var appGrid = document.querySelector("#app-grid");
+      new DomNavigator(appGrid);
   };
 
   return App;
