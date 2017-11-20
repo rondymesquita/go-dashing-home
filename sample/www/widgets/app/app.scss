@@ -9,7 +9,7 @@ $background-color:  #ff9400;
 .widget-app {
 
     background-color: $background-color;
-    box-shadow: 0px 0px 5px 2px #aaa;
+    box-shadow: 0px 7px 18px 2px #27272
     margin-bottom:24px;
     transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
 
@@ -26,7 +26,7 @@ $background-color:  #ff9400;
     }
 
     img {
-            height: 90%;
+        max-height: 100%;
             position: absolute;
             top: 50%;
             transform: translate(-50%,-50%);
