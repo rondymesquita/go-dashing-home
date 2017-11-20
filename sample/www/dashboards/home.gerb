@@ -12,9 +12,5 @@
 <script>
   var appGrid = document.querySelector("#app-grid");
   new DomNavigator(appGrid);
-
-  // $(document).ready(function() {
-  //     $('#app-grid .widget').keynavigator();
-  // });
 </script>
 

@@ -221,6 +221,7 @@
     }
 
     this.enable();
+    this.enableMouse();
   };
 
   /**
@@ -245,9 +246,12 @@
    */
   Navigator.prototype.enable = function () {
     var self = this;
+
     this.$keydownHandler = function (event) {
+      self.disableMouse()
       self.handleKeydown.call(self, event);
     };
+
     this.$doc.addEventListener('keydown', this.$keydownHandler);
   };
 
@@ -262,6 +266,22 @@
     }
   };
 
+  Navigator.prototype.enableMouse = function () {
+    var self = this;
+    this.$mousemoveHandler = function(event){
+        self.unselectAll();
+        self.$container.classList.add("mouse-over");
+    };
+    this.$container.addEventListener('mouseover', this.$mousemoveHandler);
+  };
+
+  Navigator.prototype.disableMouse = function () {
+      if (this.$mousemoveHandler) {
+          this.$container.classList.remove("mouse-over");
+          this.$doc.removeEventListener('mouseover', this.$mousemoveHandler);
+      }
+  };
+
   /**
    * Destroy this navigator removing any event registered and any other data.
    *
@@ -272,6 +292,14 @@
     if (this.$container.domNavigator) {
       delete this.$container.domNavigator;
     }
+  };
+
+  Navigator.prototype.unselectAll = function () {
+    var self = this;
+    var elements = this.elements();
+    elements.forEach(function(child, index){
+        removeClass(child, self.$options.selected);
+    });
   };
 
   /**
@@ -634,8 +662,7 @@
    *
    * @return {Array} An array of elements.
    */
-
-  Navigator.prototype.elementz = function () {
+  Navigator.prototype.elements = function () {
     var children = [];
     for (var i = this.$container.children.length; i--;) {
       // Skip comment nodes on IE8
@@ -643,21 +670,7 @@
         children.unshift(this.$container.children[i]);
       }
     }
-    console.log(children);
     return children;
-  };
-  Navigator.prototype.elements = function () {
-      var children = [];
-      for (var i = this.$container.querySelectorAll(".data-navigable").length; i--;) {
-          // Skip comment nodes on IE8
-          if (this.$container.querySelectorAll(".data-navigable")[i].nodeType !== 8) {
-              children.unshift(this.$container.querySelectorAll(".data-navigable")[i]);
-          }
-      }
-      // children = [].slice.call(this.$container.querySelectorAll(".data-navigable"));
-
-      console.log(children);
-      return children;
   };
 
   /**
