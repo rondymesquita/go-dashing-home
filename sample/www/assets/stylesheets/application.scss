@@ -50,7 +50,7 @@ body {
   background-color: $background-color;
   font-size: 20px;
   color: $text-color;
-  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
 
 b, strong {
@@ -59,16 +59,12 @@ b, strong {
 
 .widget{
   height:200px;
-  /*padding:12px;*/
+  padding:12px;
   text-align: center
 }
 .row{
   margin-bottom: 12px;
 }
-
-/*.selected, .active{*/
-    /*border:2px solid red;*/
-/*}*/
 
 // a {
 //   text-decoration: none;

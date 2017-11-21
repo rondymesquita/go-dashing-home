@@ -30,8 +30,17 @@ Dashing.App = (function(_super) {
   }
 
   App.prototype.ready = function() {
-      var appGrid = document.querySelector("#app-grid");
-      new DomNavigator(appGrid);
+      // var appGrid = document.querySelector("#app-grid");
+      // new DomNavigator(appGrid);
+      console.log(SpatialNavigation);
+      SpatialNavigation.init();
+      SpatialNavigation.add({
+          selector: '.data-navigable'
+      });
+
+      SpatialNavigation.makeFocusable();
+      SpatialNavigation.focus();
+
   };
 
   return App;

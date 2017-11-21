@@ -1,43 +1,52 @@
 var __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+    __extends = function (child, parent) {
+        for (var key in parent) {
+            if (__hasProp.call(parent, key)) child[key] = parent[key];
+        }
 
-Dashing.Apps = (function(_super) {
-  __extends(Apps, _super);
+        function ctor() {
+            this.constructor = child;
+        }
 
-  function Apps() {
-    return Apps.__super__.constructor.apply(this, arguments);
-  }
+        ctor.prototype = parent.prototype;
+        child.prototype = new ctor();
+        child.__super__ = parent.prototype;
+        return child;
+    };
 
-  Apps.prototype.sendRequest = function(){
-    
-  }
+Dashing.Apps = (function (_super) {
+    __extends(Apps, _super);
 
-  Apps.prototype.ready = function() {
+    function Apps() {
+        return Apps.__super__.constructor.apply(this, arguments);
+    }
 
-    self = this
+    Apps.prototype._load_apps = function () {
+        request = $.ajax({
+            url: "/assets/json/services.json",
+            type: "GET",
+            dataType: "json"
+        });
 
-    request = $.ajax({
-      url: "/assets/json/services.json",
-      type: "GET",
-      dataType: "json"
-    });
+        request.done(function (data) {
+            // console.log(data)
+            self.set("appList", data)
+        });
 
-    request.done(function(data){
-      // console.log(data)
-      self.set("appList", data)
-    });
+        request.fail(function (data) {
+            console.log("fail")
+            console.log(data)
+        });
+    }
 
-    request.fail(function(data){
-      console.log("fail")
-      console.log(data)
-    });
+    Apps.prototype.ready = function () {
 
-    name = this.get("name");
-    this.set("src", "/assets/images/" + name + ".png")
+        self = this
 
+        this._load_apps();
 
-  };
+    };
 
-  return Apps;
+    return Apps;
 
 })(Dashing.Widget);

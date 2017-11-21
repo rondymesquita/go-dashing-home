@@ -9,28 +9,25 @@ $background-color:  #ff9400;
 .widget-app {
 
     background-color: $background-color;
-    box-shadow: 0px 7px 18px 2px #272727
-   ;
+    box-shadow: 0px 7px 18px 2px #272727;
     margin-bottom:24px;
     transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
+
+   .container{
+       padding: 12px;
+   }
 
     &, &:hover{
         transition: all 100ms linear;
     }
 
-    .mouse-over &:hover, .selected &{
+    .mouse-over &:hover, .selected &,
+    &:hover, &:focus{
         cursor: pointer;
         z-index:9999;
         box-shadow: 0px 31px 70px -29px rgba(0,0,0,0.75);
         -ms-transform: scale(1.2) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
         transform: scale(1.2) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
-    }
-
-    img {
-        max-height: 100%;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%,-50%);
     }
 
 }

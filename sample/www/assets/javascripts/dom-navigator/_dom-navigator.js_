@@ -198,6 +198,7 @@
     Navigator.prototype.init = function () {
         this.validateOptions();
         this.$selected = null;
+        this.$previous = null;
         this.$keydownHandler = null;
 
         // Create hotkeys map.
@@ -247,7 +248,6 @@
     Navigator.prototype.enable = function () {
         var self = this;
         this.$keydownHandler = function (event) {
-            self.deselectAll();
             self.handleKeydown.call(self, event);
         };
         this.$doc.addEventListener('keydown', this.$keydownHandler);
@@ -318,7 +318,7 @@
                     next = this.elements()[0];
                     break;
                 }
-
+                this.deselectAll();
                 var left = this.$selected.offsetLeft - 1;
                 var top = this.$selected.offsetTop;
 
@@ -382,7 +382,7 @@
                     next = this.elements()[0];
                     break;
                 }
-
+                this.deselectAll();
                 var left = this.$selected.offsetLeft;
                 var top = this.$selected.offsetTop - 1;
 
@@ -445,7 +445,7 @@
                     next = this.elements()[0];
                     break;
                 }
-
+                this.deselectAll();
                 var left = this.$selected.offsetLeft + this.$selected.offsetWidth;
                 var top = this.$selected.offsetTop;
 
@@ -506,7 +506,6 @@
                     next = this.elements()[0];
                     break;
                 }
-
                 var left = this.$selected.offsetLeft;
                 var top = this.$selected.offsetTop + this.$selected.offsetHeight;
 
@@ -551,6 +550,10 @@
                 break;
         }
 
+        if(this.$previous != this.$selected){
+            this.deselectAll();
+        }
+
         this.select(next, DIRECTION.down);
     };
 
@@ -577,6 +580,7 @@
         }
         el = unboxElement(el);
         // Unselect previous element.
+        this.$previous = this.$selected;
         if (this.$selected) {
             removeClass(this.$selected, this.$options.selected);
         }
