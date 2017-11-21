@@ -13,8 +13,8 @@ $background-color:  #ff9400;
     margin-bottom:24px;
     transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
 
-   .container{
-       padding: 12px;
+   .app-container{
+       /*padding: 12px;*/
        height: 100%;
    }
 
@@ -23,7 +23,8 @@ $background-color:  #ff9400;
     }
 
     img{
-        max-height: 100%;
+        height: 100%;
+        width: 100%;
     }
 
     &:focus{

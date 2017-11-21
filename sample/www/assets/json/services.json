@@ -1,57 +1,29 @@
 [
         {
                 "name": "firefox",
-                "icon": "/assets/images/firefox.png",
+                "icon": "/assets/images/firefox.jpg",
                 "color": "#ff9400",
                 "commands": ["firefox"]
         },
         {
-                "name": "pluma",
-                "icon": "/assets/images/logo.png",
-                "color": "#222",
-                "commands": ["pluma"]
-        },
-        {
-                "name": "firefox",
-                "icon": "/assets/images/firefox.png",
+                "name": "plex",
+                "icon": "/assets/images/plex.jpg",
                 "color": "#ff9400",
                 "commands": ["firefox"]
         },
         {
-                "name": "pluma",
-                "icon": "/assets/images/logo.png",
-                "color": "#222",
-                "commands": ["pluma"]
-        },
-        {
-                "name": "firefox",
-                "icon": "/assets/images/firefox.png",
+                "name": "netflix",
+                "icon": "/assets/images/netflix.jpg",
                 "color": "#ff9400",
                 "commands": ["firefox"]
         },
         {
-                "name": "pluma",
-                "icon": "/assets/images/logo.png",
-                "color": "#222",
-                "commands": ["pluma"]
-        },
-        {
-                "name": "firefox",
-                "icon": "/assets/images/firefox.png",
-                "color": "#ff9400",
-                "commands": ["firefox"]
-        },
-        {
-                "name": "pluma",
-                "icon": "/assets/images/logo.png",
-                "color": "#222",
-                "commands": ["pluma"]
-        },
-        {
-                "name": "firefox",
-                "icon": "/assets/images/firefox.png",
+                "name": "youtube",
+                "icon": "/assets/images/youtube.png",
                 "color": "#ff9400",
                 "commands": ["firefox"]
         }
+
+
 
 ]

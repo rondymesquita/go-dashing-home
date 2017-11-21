@@ -1,27 +1,23 @@
 <% content "title" { %>Dashboard<% } %>
 
-<header>
-<ul class="nav justify-content-end">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </li>
-</ul>
-</header>
-
-<div class="row">
+<div class="row no-gutters">
   <div class="col-sm-3">
     <div id="service-grid" data-id="switches" data-view="Switches" data-title="Switches" data-text="Some Text here" class="h-100"></div>
   </div>
   <div class="col-sm">
+
+    <div class="row header">
+      <div class="col-sm">
+      <header>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link disabled title" href="#"><h2>Rondy</h2></a>
+          </li>
+        </ul>
+      </header>
+      </div>
+    </div>
+
       <div id="app-grid" data-id="apps" data-view="Apps" data-title="Apps" class="row"></div>
   </div>
 </div>
