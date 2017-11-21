@@ -1,34 +1,54 @@
 var __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+    __extends = function (child, parent) {
+        for (var key in parent) {
+            if (__hasProp.call(parent, key)) child[key] = parent[key];
+        }
 
-Dashing.Switch = (function(_super) {
-  __extends(Switch, _super);
+        function ctor() {
+            this.constructor = child;
+        }
 
-  function Switch() {
-    httpClient = new HttpClient();
-    return Switch.__super__.constructor.apply(this, arguments);
-  }
+        ctor.prototype = parent.prototype;
+        child.prototype = new ctor();
+        child.__super__ = parent.prototype;
+        return child;
+    };
 
-  Switch.prototype.ready = function(e){
-    // componentHandler.upgradeAllRegistered()
-    // this.set('id', this.get('handler'))
-  }
+Dashing.Switch = (function (_super) {
+    __extends(Switch, _super);
 
-  Switch.prototype.onChange = function(node, e){
-    if (e.type == 'change'){
-      if(node.checked){
-
-      }else{
-
-      }
+    function Switch() {
+        httpClient = new HttpClient();
+        return Switch.__super__.constructor.apply(this, arguments);
     }
-  }
 
-  Switch.prototype.onData = function(data){
-    console.log(data)
-  }
+    Switch.prototype.viewDidAppear = function(){
+        console.log(this.get("fulano"));
+        console.log(this.get("service.command_start"));
+    };
 
-  return Switch;
+    Switch.prototype.ready = function (e) {
+        var self = this;
+        $(".widget-switch .switch").bootstrapSwitch();
+
+        $(".widget-switch .switch").on('switchChange.bootstrapSwitch', function(event, state) {
+            console.log(this.id); // DOM element
+            console.log(event); // jQuery event
+            console.log(state); // true | false
+
+
+            // if(state){
+            //     self.enable
+            // }
+        });
+
+    };
+
+    Switch.prototype.onData = function (data) {
+        console.log(data)
+    };
+
+    return Switch;
 
 })(Dashing.Widget);
 

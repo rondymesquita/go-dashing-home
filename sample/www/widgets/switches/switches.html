@@ -1,3 +1,8 @@
-<div data-id="switch-plex" data-handler="Plex" data-view="Switch" data-title="Switch" data-text="Some Text here" data-button="Click on me" data-height="200" data-width="200"></div>
+<!--<div data-id="switch-plex" data-handler="Plex" data-view="Switch" data-title="Switch" data-text="Some Text here" data-button="Click on me" data-height="200" data-width="200"></div>
 
-<div data-id="switch-qbitorrent" data-handler="qBitTorrent" data-view="Switch" data-title="Switch" data-text="Some Text here" data-button="Click on me" data-height="200" data-width="200"></div>
+<div data-id="switch-qbitorrent" data-handler="qBitTorrent" data-view="Switch" data-title="Switch" data-text="Some Text here" data-button="Click on me" data-height="200" data-width="200"></div> -->
+
+
+<div data-foreach-service="serviceList">
+    <div data-id="service.id" data-view="Switch" class="data-navigable" data-context-service="service"></div>
+</div>

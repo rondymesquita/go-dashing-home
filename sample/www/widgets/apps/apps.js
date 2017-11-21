@@ -22,8 +22,9 @@ Dashing.Apps = (function (_super) {
     }
 
     Apps.prototype._load_apps = function () {
+        var self = this;
         request = $.ajax({
-            url: "/assets/json/services.json",
+            url: "/assets/json/apps.json",
             type: "GET",
             dataType: "json"
         });

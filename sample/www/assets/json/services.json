@@ -1,29 +1,20 @@
 [
-        {
-                "name": "firefox",
-                "icon": "/assets/images/firefox.jpg",
-                "color": "#ff9400",
-                "commands": ["firefox"]
-        },
-        {
-                "name": "plex",
-                "icon": "/assets/images/plex.jpg",
-                "color": "#ff9400",
-                "commands": ["firefox"]
-        },
-        {
-                "name": "netflix",
-                "icon": "/assets/images/netflix.jpg",
-                "color": "#ff9400",
-                "commands": ["firefox"]
-        },
-        {
-                "name": "youtube",
-                "icon": "/assets/images/youtube.png",
-                "color": "#ff9400",
-                "commands": ["firefox"]
-        }
-
-
-
+  {
+    "name": "plex",
+    "icon": "/assets/images/firefox.jpg",
+    "handler": "plex",
+    "id": "switch-plex",
+    "command_start": "docker start pg",
+    "command_stop": "docker stop pg",
+    "command_status": "docker ps"
+  },
+  {
+    "name": "qbitorrent",
+    "icon": "/assets/images/firefox.jpg",
+    "handler": "qbitorrent",
+    "id": "switch-qbitorrent",
+    "command_start": "",
+    "command_stop": "",
+    "command_status": ""
+  }
 ]

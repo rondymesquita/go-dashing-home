@@ -1,0 +1,29 @@
+[
+        {
+                "name": "firefox",
+                "icon": "/assets/images/firefox.jpg",
+                "color": "#ff9400",
+                "commands": ["firefox", "www.google.com.br"]
+        },
+        {
+                "name": "plex",
+                "icon": "/assets/images/plex.jpg",
+                "color": "#ff9400",
+                "commands": ["firefox"]
+        },
+        {
+                "name": "netflix",
+                "icon": "/assets/images/netflix.jpg",
+                "color": "#ff9400",
+                "commands": ["firefox"]
+        },
+        {
+                "name": "youtube",
+                "icon": "/assets/images/youtube.png",
+                "color": "#ff9400",
+                "commands": ["firefox"]
+        }
+
+
+
+]

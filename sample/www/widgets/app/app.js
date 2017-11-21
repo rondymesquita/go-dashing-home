@@ -23,23 +23,24 @@ Dashing.App = (function (_super) {
 
     App.prototype.sendrequest = function () {
         self = this
+        console.log(arg)
 
-        request = $.ajax({
-            url: "/command/exec",
-            type: "POST",
-            data: "{\"Commands\": [[\"echo\", \"hello\"], [\"firefox\"]]}",
-            dataType: "json"
-        });
-
-        request.done(function (data) {
-            console.log(data)
-            self.set('button', 'Fulano');
-        });
-
-        request.fail(function (data) {
-            console.log("fail")
-            console.log(data)
-        });
+        // request = $.ajax({
+        //     url: "/command/exec",
+        //     type: "POST",
+        //     data: "{\"Commands\": [[\"echo\", \"hello\"], [\"firefox\"]]}",
+        //     dataType: "json"
+        // });
+        //
+        // request.done(function (data) {
+        //     console.log(data)
+        //     self.set('button', 'Fulano');
+        // });
+        //
+        // request.fail(function (data) {
+        //     console.log("fail")
+        //     console.log(data)
+        // });
     }
 
     App.prototype.viewDidAppear = function () {
@@ -63,7 +64,7 @@ Dashing.App = (function (_super) {
             this.navigableElements.forEach(function (element) {
                 element.blur();
             });
-        }
+        };
 
         this.handleMouseEnter = function (event) {
             SpatialNavigation.focus(event.target);
