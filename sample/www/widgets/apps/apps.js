@@ -39,12 +39,9 @@ Dashing.Apps = (function (_super) {
         });
     }
 
-    Apps.prototype.ready = function () {
-
-        self = this
-
+    Apps.prototype.ready = function() {
+        self = this;
         this._load_apps();
-
     };
 
     return Apps;

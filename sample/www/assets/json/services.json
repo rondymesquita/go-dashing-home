@@ -46,6 +46,12 @@
                 "icon": "/assets/images/logo.png",
                 "color": "#222",
                 "commands": ["pluma"]
+        },
+        {
+                "name": "firefox",
+                "icon": "/assets/images/firefox.png",
+                "color": "#ff9400",
+                "commands": ["firefox"]
         }
 
 ]

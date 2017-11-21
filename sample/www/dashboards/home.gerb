@@ -26,11 +26,4 @@
   </div>
 </div>
 
-<script>
-$(document).ready(function(){
-    // var appGrid = document.querySelector("#app-grid");
-    // new DomNavigator(appGrid);
-});
-
-</script>
 
