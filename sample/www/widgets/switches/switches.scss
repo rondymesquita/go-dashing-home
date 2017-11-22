@@ -9,12 +9,12 @@ $background-color:  #0096A6;
 .widget-switches {
 
 	background-color: $background-color;
+   padding:12px;
 
         .widget{
           display:block;
           height: auto;
           padding: 0;
-		// margin-bottom:12px;
 	}
 
 }

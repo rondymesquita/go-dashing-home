@@ -43,7 +43,6 @@ Dashing.Switches = (function (_super) {
 
     Switches.prototype.ready = function (e) {
         this._load_services();
-        // componentHandler.upgradeAllRegistered()
     }
 
     return Switches;

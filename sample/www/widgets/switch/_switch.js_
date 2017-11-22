@@ -23,11 +23,11 @@ Dashing.Switch = (function (_super) {
     }
 
     Switch.prototype.viewDidAppear = function(){
-        console.log(this.get("fulano"));
-        console.log(this.get("service.command_start"));
+        console.log(this.get("icon"));
     };
 
     Switch.prototype.ready = function (e) {
+        // console.log(this.get("icon"));
         var self = this;
         $(".widget-switch .switch").bootstrapSwitch();
 
@@ -35,11 +35,6 @@ Dashing.Switch = (function (_super) {
             console.log(this.id); // DOM element
             console.log(event); // jQuery event
             console.log(state); // true | false
-
-
-            // if(state){
-            //     self.enable
-            // }
         });
 
     };

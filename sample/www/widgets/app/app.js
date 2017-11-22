@@ -23,7 +23,6 @@ Dashing.App = (function (_super) {
 
     App.prototype.sendrequest = function () {
         self = this
-        console.log(arg)
 
         // request = $.ajax({
         //     url: "/command/exec",

@@ -1,10 +1,18 @@
-<div data-context>
+<div>
     <!--<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect data-navigable" data-bind-for="handler">-->
-    <label class="" data-bind-for="service.handler">
-        <p class="title" data-bind="service.handler"></p>
-        <p class="title" data-bind="service.command_start"></p>
+    <input type="text" data-bind="service.icon" data-target="icon"/>
+    <input type="text" data-bind="fulano" />
+    <input type="button" data-event-click="clickhere"/>
+
+    <label data-bind-for="service.handler" data-target="service">
+        <div class="row">
+            <div class="col-md">
+        <span class="" data-bind="service.handler"></span>
+            </div>
+            <div class="col-md">
         <input type="checkbox" data-bind-id="service.handler" data-source="switch-id" class="switch" data-event-change="onChange"
                data-bind="checked">
-        <span class=""></span>
+        </div>
+        </div>
     </label>
 </div>
