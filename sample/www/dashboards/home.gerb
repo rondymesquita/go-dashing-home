@@ -3,6 +3,11 @@
 <div class="row no-gutters">
   <div class="col-sm-3">
     <div id="service-grid" data-id="switches" data-view="Switches" data-title="Switches" data-text="Some Text here" class="h-100"></div>
+
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span>
+    </div>
+
   </div>
   <div class="col-sm">
 
