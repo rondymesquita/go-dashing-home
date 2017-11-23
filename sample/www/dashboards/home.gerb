@@ -22,17 +22,16 @@
       </div>
     </div>
 
-      <div id="app-grid" data-id="apps" data-view="Apps" data-title="Apps" class="row"></div>
+      <!--<div id="app-grid" data-id="apps" data-view="Apps" data-title="Apps" class="row"></div>-->
+    <apps-widget></apps-widget>
   </div>
 </div>
 </div>
 
-<div id="templates">
-  
-</div>
+<div id="templates"></div>
 
 <script>
-var widgets = ['switch','services'];
+var widgets = ['switch','services','app','apps'];
 widgets.forEach(function(widget){
     new WidgetHTMLLoader().load(widget).into("#templates");
 });

@@ -1,6 +1,8 @@
-<div data-event-click="sendrequest" class="app-container">
-    <div class="overlay"></div>
-    <img data-bind-src="app.icon" class="img-fluid">
-    <!-- <span class="label" data-bind="app.name"></span>-->
-    <span class="label" data-bind="app.commands"></span>
-</div>
+
+<script type="text/x-template" id="app-template">
+    <div data-event-click="sendrequest" class="app-container app-widget">
+        <div class="overlay"></div>
+        <img :src="app.icon" class="img-fluid">
+        <span class="label">{{app.name}}</span>
+    </div>
+</script>

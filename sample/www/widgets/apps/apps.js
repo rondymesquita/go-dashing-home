@@ -1,50 +1,33 @@
-var __hasProp = {}.hasOwnProperty,
-    __extends = function (child, parent) {
-        for (var key in parent) {
-            if (__hasProp.call(parent, key)) child[key] = parent[key];
+Vue.component('apps-widget', {
+    template: '#apps-template',
+    props:[],
+    data: function(){
+        return {
+            apps: []
         }
+    },
+    beforeMount: function(){
+        this.load_apps()
+    },
+    methods:{
+        load_apps: function(){
+            var self = this;
+            request = $.ajax({
+                url: "/assets/json/apps.json",
+                type: "GET",
+                dataType: "json"
+            });
 
-        function ctor() {
-            this.constructor = child;
+            request.done(function (data) {
+                console.log(data)
+                self.$data.apps = data
+            });
+
+            request.fail(function (data) {
+                console.log("fail")
+                console.log(data)
+            });
         }
-
-        ctor.prototype = parent.prototype;
-        child.prototype = new ctor();
-        child.__super__ = parent.prototype;
-        return child;
-    };
-
-Dashing.Apps = (function (_super) {
-    __extends(Apps, _super);
-
-    function Apps() {
-        return Apps.__super__.constructor.apply(this, arguments);
     }
+});
 
-    Apps.prototype._load_apps = function () {
-        var self = this;
-        request = $.ajax({
-            url: "/assets/json/apps.json",
-            type: "GET",
-            dataType: "json"
-        });
-
-        request.done(function (data) {
-            // console.log(data)
-            self.set("appList", data)
-        });
-
-        request.fail(function (data) {
-            console.log("fail")
-            console.log(data)
-        });
-    }
-
-    Apps.prototype.ready = function() {
-        self = this;
-        this._load_apps();
-    };
-
-    return Apps;
-
-})(Dashing.Widget);

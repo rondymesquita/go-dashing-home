@@ -1,13 +1,24 @@
 Vue.component('switch-widget', {
     template: '#hello-world-template',
-    props:['name'],
+    props:['name','service'],
     mounted: function(){
         var selector = "input[name='"+this.name+"']";
         $(selector).bootstrapSwitch();
+        $(selector).on('switchChange.bootstrapSwitch', this.onChange);
     },
     methods:{
-        clickhere: function(){
-            alert()
+        onChange: function(event, state){
+            if(state){
+                this.enable();
+            }else{
+                this.disable();
+            }
+        },
+        enable: function(){
+
+        },
+        disable: function(){
+
         }
     }
 });

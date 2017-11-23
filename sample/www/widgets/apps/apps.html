@@ -1,4 +1,5 @@
-<!-- <div data-id="command" data-view="Command" data-name="firefox"></div> -->
-<div data-foreach-app="appList" class="col-sm-4">
-    <div data-id="app.name" data-view="App" class="data-navigable" ></div>
-</div>
+<script type="text/x-template" id="apps-template">
+    <div class="apps-widget col-sm-4">
+        <app-widget v-for="app in apps" :key="app.name" class="data-navigable" :app="app"></app-widget>
+    </div>
+</script>
