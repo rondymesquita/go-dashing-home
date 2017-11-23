@@ -32,7 +32,7 @@ Vue.component('app-widget', {
         });
     },
     methods:{
-        sendRequest: function(){
+        open: function(){
             // request = $.ajax({
             //     url: "/command/exec",
             //     type: "POST",

@@ -16,7 +16,7 @@
 
 </head>
   <body>
-    <div id="container" class=" no-gutters">
+    <div id="container" class="container-fluid">
       <%! yield %>
     </div>
 

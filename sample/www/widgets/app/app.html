@@ -1,8 +1,9 @@
-
 <script type="text/x-template" id="app-template">
-    <div data-event-click="sendrequest" class="app-container app-widget">
+    <div class="col-md-4">
+    <div v-on:click="open" class="app-widget data-navigable" >
         <div class="overlay"></div>
         <img :src="app.icon" class="img-fluid">
-        <span class="label">{{app.name}}</span>
     </div>
+    </div>
+
 </script>

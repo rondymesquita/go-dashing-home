@@ -1,5 +1,5 @@
 <script type="text/x-template" id="apps-template">
-    <div class="apps-widget col-sm-4">
-        <app-widget v-for="app in apps" :key="app.name" class="data-navigable" :app="app"></app-widget>
+    <div class="apps-widget row">
+        <app-widget v-for="app in apps" :key="app.name" :app="app"></app-widget>
     </div>
 </script>

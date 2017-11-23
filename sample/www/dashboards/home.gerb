@@ -1,7 +1,7 @@
 <% content "title" { %>Dashboard<% } %>
 
 <div id="app">
-<div class="row no-gutters">
+<div class="row">
   <div class="col-sm-3">
     <div class="h-100">
       <services-widget></services-widget>
@@ -10,19 +10,18 @@
   </div>
   <div class="col-sm">
 
-    <div class="row header no-gutters">
+    <div class="row headers">
       <div class="col-sm">
-      <header>
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link disabled title" href="#"><h2>Rondy</h2></a>
-          </li>
-        </ul>
-      </header>
+        <header>
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link disabled title" href="#"><h2>Rondy</h2></a>
+            </li>
+          </ul>
+        </header>
       </div>
     </div>
 
-      <!--<div id="app-grid" data-id="apps" data-view="Apps" data-title="Apps" class="row"></div>-->
     <apps-widget></apps-widget>
   </div>
 </div>
