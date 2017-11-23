@@ -1,11 +1,12 @@
 <% content "title" { %>Dashboard<% } %>
 
+<div id="app">
 <div class="row no-gutters">
   <div class="col-sm-3">
-    <div id="service-grid" data-id="switches" data-view="Switches" data-title="Switches" data-text="Some Text here" class="h-100"></div>
+    <div id="service-grid" class="h-100">
 
-    <div id="app-3">
-      <span v-if="seen">Now you see me</span>
+      <services-widget></services-widget>
+
     </div>
 
   </div>
@@ -26,5 +27,19 @@
       <div id="app-grid" data-id="apps" data-view="Apps" data-title="Apps" class="row"></div>
   </div>
 </div>
+</div>
 
+<div id="templates">
+  
+</div>
 
+<script>
+var widgets = ['switch','services'];
+widgets.forEach(function(widget){
+    new WidgetHTMLLoader().load(widget).into("#templates");
+});
+
+new Vue({
+    el: '#app'
+})
+</script>

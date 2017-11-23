@@ -5,9 +5,8 @@
 #= require_directory .
 #= require_directory ./vue
 #= require_directory ./bootstrap
-#= require_directory ./shared
+#= require_directory ./common
 #= require_directory ./spatial-navigation
 #= require_directory ./bootstrap-switch
+#= require_directory ./init
 #= require_tree ../../widgets
-
-console.log("Yeah! The dashboard has started!")

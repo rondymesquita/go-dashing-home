@@ -6,6 +6,7 @@ import (
 	"github.com/znly/go-dashing"
 	"os/exec"
 	"log"
+	"io/ioutil"
 )
 
 type CommandRouter struct{}
@@ -39,10 +40,21 @@ func (router *CommandRouter) sayHiHandler(c *gin.Context) {
 	c.JSON(200, gin.H{"message": "hi there!"})
 }
 
+func (router *CommandRouter) templatesHandler(c *gin.Context) {
+	template := c.Param("template")
+	path := fmt.Sprintf("./www/widgets/%s/%s.html", template, template)
+	content, err := ioutil.ReadFile(path)
+	if err != nil {
+		fmt.Println("err", err)
+	}
+	c.String(200, string(content))
+}
+
 func (router *CommandRouter) Routes() ([]*dashing.CustomRoute){
 	return []*dashing.CustomRoute{
 		&dashing.CustomRoute{"/command/exec", "POST",router.Exec},
 		&dashing.CustomRoute{"/say-hi", "GET",router.sayHiHandler},
+		&dashing.CustomRoute{"/templates/:template", "GET",router.templatesHandler},
 	}
 }
 
