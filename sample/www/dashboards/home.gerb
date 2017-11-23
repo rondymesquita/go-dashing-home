@@ -28,14 +28,3 @@
 </div>
 
 <div id="templates"></div>
-
-<script>
-var widgets = ['switch','services','app','apps'];
-widgets.forEach(function(widget){
-    new WidgetHTMLLoader().load(widget).into("#templates");
-});
-
-new Vue({
-    el: '#app'
-})
-</script>

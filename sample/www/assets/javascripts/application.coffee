@@ -8,5 +8,5 @@
 #= require_directory ./common
 #= require_directory ./spatial-navigation
 #= require_directory ./bootstrap-switch
-#= require_directory ./init
 #= require_tree ../../widgets
+#= require_directory ./init

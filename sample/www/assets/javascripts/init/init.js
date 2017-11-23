@@ -1,8 +1,14 @@
-// var widgets = ['switch'];
-//
-// widgets.forEach(function(widget){
-//     new WidgetHTMLLoader().load(widget).into("#templates");
-//     console.log("loading")
-// });
-//
-// console.log("Started!")
+$(document).ready(function(){
+
+    var widgets = ['switch','services','app','apps'];
+    widgets.forEach(function(widget){
+        new WidgetHTMLLoader().load(widget).into("#templates");
+    });
+
+    new Vue({
+        el: '#app'
+    });
+
+
+});
+

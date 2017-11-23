@@ -3,7 +3,8 @@ Vue.component('apps-widget', {
     props:[],
     data: function(){
         return {
-            apps: []
+            apps: [],
+
         }
     },
     beforeMount: function(){
@@ -19,7 +20,6 @@ Vue.component('apps-widget', {
             });
 
             request.done(function (data) {
-                console.log(data)
                 self.$data.apps = data
             });
 
