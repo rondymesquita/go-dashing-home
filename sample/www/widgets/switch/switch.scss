@@ -1,12 +1,8 @@
-// ----------------------------------------------------------------------------
-// Sass declarations
-// ----------------------------------------------------------------------------
-$background-color:  #dc5945;
+$background-color:  rgb(0,150,166);
 
-// ----------------------------------------------------------------------------
-// Widget-clock styles
-// ----------------------------------------------------------------------------
-.widget-switch {
+.switch-widget {
+
+padding: 6px;
   
   .title{
   	font-size: 24px;
@@ -15,13 +11,14 @@ $background-color:  #dc5945;
 
   label{
       width:100%;
+      display: block;
   }
 
-  label:focus{
+  &:focus{
+      background-color:  rgba(255,255,255,0.3);
        z-index:9999;
        box-shadow: 0px 31px 70px -29px rgba(0,0,0,0.75);
-       -ms-transform: scale(1.2) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
-       transform: scale(1.2) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
+       /*transform: scale(1.1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);*/
    }
 
 }

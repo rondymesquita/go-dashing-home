@@ -2,26 +2,7 @@ Vue.component('services-widget', {
     template: '#services-template',
     data: function(){
         return {
-            services: [
-                {
-                    "name": "plex",
-                    "icon": "/assets/images/firefox.jpg",
-                    "handler": "plex",
-                    "id": "switch-plex",
-                    "command_start": "docker start pg",
-                    "command_stop": "docker stop pg",
-                    "command_status": "docker ps"
-                },
-                {
-                    "name": "qbitorrent",
-                    "icon": "/assets/images/firefox.jpg",
-                    "handler": "qbitorrent",
-                    "id": "switch-qbitorrent",
-                    "command_start": "",
-                    "command_stop": "",
-                    "command_status": ""
-                }
-            ]
+            services: []
         }
     },
     beforeCreate: function(){
@@ -33,15 +14,13 @@ Vue.component('services-widget', {
         });
 
         request.done(function (resp) {
-            console.log(self.data)
+            self.$data.services = resp
         });
 
         request.fail(function (data) {
-            console.log("fail")
+            console.log("fail loading services")
             console.log(data)
         });
-    },
-    mounted: function(){
     },
     methods:{
         clickhere: function(){

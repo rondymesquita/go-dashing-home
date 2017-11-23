@@ -3,10 +3,8 @@
 <div id="app">
 <div class="row no-gutters">
   <div class="col-sm-3">
-    <div id="service-grid" class="h-100">
-
+    <div class="h-100">
       <services-widget></services-widget>
-
     </div>
 
   </div>
