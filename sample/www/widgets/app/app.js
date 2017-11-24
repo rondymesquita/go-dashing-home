@@ -2,6 +2,7 @@ Vue.component('app-widget', {
     template: '#app-template',
     props:['app'],
     mounted: function(){
+        console.log("app mounted")
         SpatialNavigation.init();
         SpatialNavigation.add({
             selector: '.data-navigable'
