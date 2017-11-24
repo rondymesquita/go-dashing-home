@@ -16,19 +16,15 @@
         },
         methods: {
             open: function () {
-                request = $.ajax({
+                $.ajax({
                     url: "/command/exec",
                     type: "POST",
                     data: "{\"Commands\": [[\"echo\", \"hello\"], [\"firefox\"]]}",
                     dataType: "json"
-                });
-
-                request.done(function (data) {
+                }).done(function (data, text, jq) {
+                    console.log("success")
                     console.log(data)
-                    self.set('button', 'Fulano');
-                });
-
-                request.fail(function (data) {
+                }).fail(function (data, text, jq) {
                     console.log("fail")
                     console.log(data)
                 });

@@ -4,17 +4,17 @@
     "icon": "/assets/images/firefox.jpg",
     "handler": "plex",
     "id": "switch-plex",
-    "command_start": "docker start pg",
-    "command_stop": "docker stop pg",
-    "command_status": "docker ps"
+    "shell_start": "start_plex.sh",
+    "shell_stop": "stop_plex.sh",
+    "shell_status": "status_plex.sh"
   },
   {
     "name": "qbitorrent",
     "icon": "/assets/images/firefox.jpg",
     "handler": "qbitorrent",
     "id": "switch-qbitorrent",
-    "command_start": "",
-    "command_stop": "",
-    "command_status": ""
+    "shell_start": "start_qbitorrent.sh",
+    "shell_stop": "stop_qbitorrent.sh",
+    "shell_status": "status_qbitorrent.sh"
   }
 ]

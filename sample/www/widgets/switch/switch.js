@@ -26,9 +26,30 @@
                 }
             },
             enable: function () {
+                console.log(this.service.shell_start)
+                new ShellExecuter()
+                    .shell(this.service.shell_start)
+                    .execute()
+                    .done(function (data, text, xhr) {
+                        console.log("success")
+                        console.log(data, text)
+                    }).fail(function (xhr, status, error) {
+                        console.log("fail")
+                        console.log(status, error)
+                    });
 
             },
             disable: function () {
+                new ShellExecuter()
+                    .shell(this.service.shell_stop)
+                    .execute()
+                    .done(function (data, text, xhr) {
+                        console.log("success")
+                        console.log(data, text)
+                    }).fail(function (xhr, status, error) {
+                    console.log("fail")
+                    console.log(status, error)
+                });
 
             }
         }

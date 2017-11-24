@@ -4,33 +4,57 @@ import (
 	"github.com/gin-gonic/gin"
 	"fmt"
 	"github.com/znly/go-dashing"
+	"io/ioutil"
 	"os/exec"
 	"log"
-	"io/ioutil"
 )
 
 type CommandRouter struct{}
 
+//type CommandParams struct{
+//	Commands [][]string
+//}
+
+//func (router *CommandRouter) Exec(c *gin.Context) {
+//	params := &CommandParams{}
+//	c.BindJSON(params)
+//
+//	fmt.Println(params)
+//
+//	for _, command := range params.Commands{
+//		cmd := exec.Command(command[0], command[1:]...)
+//		output, err := cmd.Output()
+//		fmt.Println(string(output))
+//
+//		if err != nil{
+//			log.Println(fmt.Sprintf("Error while executing [%s]", command))
+//			log.Println(fmt.Sprintf("%s", err))
+//			c.String(500, string(err.Error()))
+//		}
+//
+//	}
+//
+//	c.String(200, "funfou")
+//}
+
 type CommandParams struct{
-	Commands [][]string
+	Command string
 }
 
 func (router *CommandRouter) Exec(c *gin.Context) {
-	params := &CommandParams{}
-	c.BindJSON(params)
+	file := c.Query("file")
+	command := "./www/assets/shell/" + file
+	fmt.Println(command)
 
-	for _, command := range params.Commands{
-		cmd := exec.Command(command[0], command[1:]...)
-		output, err := cmd.Output()
+	cmd := exec.Command("/bin/sh", command)
+	output, err := cmd.Output()
+	fmt.Println(string(output))
 
-		if err != nil{
-			log.Println(fmt.Sprintf("Error while executing [%s]", command))
-			log.Println(fmt.Sprintf("%s", err))
-			c.Status(500)
-		}
-
-		log.Println(string(output))
-
+	if err != nil {
+		log.Println(fmt.Sprintf("Error while executing [%s]", file))
+		log.Println(fmt.Sprintf("%s", err))
+		c.String(500, string(err.Error()))
+		return
 	}
 
 	c.Status(200)
@@ -52,7 +76,7 @@ func (router *CommandRouter) templatesHandler(c *gin.Context) {
 
 func (router *CommandRouter) Routes() ([]*dashing.CustomRoute){
 	return []*dashing.CustomRoute{
-		&dashing.CustomRoute{"/command/exec", "POST",router.Exec},
+		&dashing.CustomRoute{"/shell/exec", "GET",router.Exec},
 		&dashing.CustomRoute{"/say-hi", "GET",router.sayHiHandler},
 		&dashing.CustomRoute{"/templates/:template", "GET",router.templatesHandler},
 	}

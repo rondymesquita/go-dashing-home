@@ -23,7 +23,6 @@ $(document).ready(function(){
         SpatialNavigation.focus();
 
         var onMouseEnter = function (event) {
-            console.log("enter");
             SpatialNavigation.focus(event.target);
         };
         var onMouseLeave = function(event){
