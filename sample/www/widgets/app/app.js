@@ -1,55 +1,39 @@
-Vue.component('app-widget', {
-    template: '#app-template',
-    props:['app'],
-    mounted: function(){
-        console.log("app mounted")
-        SpatialNavigation.init();
-        SpatialNavigation.add({
-            selector: '.data-navigable'
-        });
+(function () {
+    var deferred = jQuery.Deferred();
+    var promise = deferred.promise();
 
-        SpatialNavigation.makeFocusable();
-        SpatialNavigation.focus();
+    window.appWidget = Vue.component('app-widget', {
+        template: '#app-template',
+        props: ['app'],
+        data: function () {
+            return {
+                deferred: deferred,
+                promise: promise
+            }
+        },
+        mounted: function () {
+            this.$data.deferred.resolve("app mounted");
+        },
+        methods: {
+            open: function () {
+                request = $.ajax({
+                    url: "/command/exec",
+                    type: "POST",
+                    data: "{\"Commands\": [[\"echo\", \"hello\"], [\"firefox\"]]}",
+                    dataType: "json"
+                });
 
-        this.navigableElements = document.querySelectorAll(".data-navigable");
+                request.done(function (data) {
+                    console.log(data)
+                    self.set('button', 'Fulano');
+                });
 
-        this.blurAllNavigableElements = function(){
-            this.navigableElements.forEach(function (element) {
-                element.blur();
-            });
-        };
-
-        this.handleMouseEnter = function (event) {
-            SpatialNavigation.focus(event.target);
-        };
-
-        this.handleMouseLeave = function (event) {
-            self.blurAllNavigableElements();
-        };
-
-        this.navigableElements.forEach(function (element) {
-            element.addEventListener("mouseenter", self.handleMouseEnter);
-            element.addEventListener("mouseleave", self.handleMouseLeave);
-        });
-    },
-    methods:{
-        open: function(){
-            request = $.ajax({
-                url: "/command/exec",
-                type: "POST",
-                data: "{\"Commands\": [[\"echo\", \"hello\"], [\"firefox\"]]}",
-                dataType: "json"
-            });
-
-            request.done(function (data) {
-                console.log(data)
-                self.set('button', 'Fulano');
-            });
-
-            request.fail(function (data) {
-                console.log("fail")
-                console.log(data)
-            });
+                request.fail(function (data) {
+                    console.log("fail")
+                    console.log(data)
+                });
+            }
         }
-    }
-});
+    });
+
+})();
