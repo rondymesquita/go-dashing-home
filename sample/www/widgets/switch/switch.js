@@ -12,18 +12,22 @@
             }
         },
         mounted: function () {
-            var selector = "input[name='" + this.name + "']";
-            $(selector).bootstrapSwitch();
-            $(selector).on('switchChange.bootstrapSwitch', this.onChange);
+            $(this.selector()).bootstrapSwitch();
+            $(this.selector()).on('switchChange.bootstrapSwitch', this.onChange);
             this.$data.deferred.resolve("switch mounted");
         },
         methods: {
+            selector : function(){
+                return "input[name='" + this.name + "']";
+            },
             onChange: function (event, state) {
+                // $(this.selector()).bootstrapSwitch('setDisabled', true);
                 if (state) {
                     this.enable();
                 } else {
                     this.disable();
                 }
+                // $(this.selector()).bootstrapSwitch('setDisabled', false);
             },
             enable: function () {
                 console.log(this.service.shell_start)

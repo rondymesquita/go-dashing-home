@@ -11,32 +11,6 @@ import (
 
 type CommandRouter struct{}
 
-//type CommandParams struct{
-//	Commands [][]string
-//}
-
-//func (router *CommandRouter) Exec(c *gin.Context) {
-//	params := &CommandParams{}
-//	c.BindJSON(params)
-//
-//	fmt.Println(params)
-//
-//	for _, command := range params.Commands{
-//		cmd := exec.Command(command[0], command[1:]...)
-//		output, err := cmd.Output()
-//		fmt.Println(string(output))
-//
-//		if err != nil{
-//			log.Println(fmt.Sprintf("Error while executing [%s]", command))
-//			log.Println(fmt.Sprintf("%s", err))
-//			c.String(500, string(err.Error()))
-//		}
-//
-//	}
-//
-//	c.String(200, "funfou")
-//}
-
 type CommandParams struct{
 	Command string
 }
