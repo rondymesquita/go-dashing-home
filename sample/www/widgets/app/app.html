@@ -1,9 +1,8 @@
 <script type="text/x-template" id="app-template">
-    <div class="col-md-4">
-    <div v-on:click="open" class="app-widget data-navigable" >
-        <div class="overlay"></div>
-        <img :src="app.icon" class="img-fluid">
-    </div>
-    </div>
-
+    <v-flex class="md4 pa-2">
+        <div v-on:click="open" class="app-widget elevation-3 data-navigable">
+            <div class="overlay"></div>
+            <img :src="app.icon">
+        </div>
+    </v-flex>
 </script>

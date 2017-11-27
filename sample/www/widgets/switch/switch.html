@@ -1,14 +1,5 @@
 <script type="text/x-template" id="hello-world-template">
     <div class="switch-widget data-navigable">
-        <label :for="name">
-            <div class="row">
-                <div class="col-sm">
-                    <span class="">{{service.name}}</span>
-                </div>
-                <div class="col-sm">
-                    <input type="checkbox" :name="name" class="switch">
-                </div>
-            </div>
-        </label>
+        <v-switch value input-value="true" v-bind:label="service.name">{{service.name}}</v-switch>
     </div>
 </script>

@@ -1,7 +1,6 @@
 /*
   //=require_directory .
-  //=require_directory ./bootstrap
-  //=require_directory ./bootstrap-switch
+  //=require_directory ./vuetify
   //=require_tree ../../widgets
   */
 // ----------------------------------------------------------------------------
@@ -82,6 +81,7 @@ b, strong {
 /*}*/
 
 :focus{
-  border:1px solid red;
+  /*border:1px solid red;*/
+  outline: none;
 }
 

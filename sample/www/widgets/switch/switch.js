@@ -12,8 +12,8 @@
             }
         },
         mounted: function () {
-            $(this.selector()).bootstrapSwitch();
-            $(this.selector()).on('switchChange.bootstrapSwitch', this.onChange);
+            // $(this.selector()).bootstrapSwitch();
+            // $(this.selector()).on('switchChange.bootstrapSwitch', this.onChange);
             this.$data.deferred.resolve("switch mounted");
         },
         methods: {

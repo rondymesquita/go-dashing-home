@@ -9,20 +9,15 @@ $background-color:  #ff9400;
 .app-widget {
 
     background-color: $background-color;
-    box-shadow: 0px 7px 18px 2px #272727;
     margin-bottom:24px;
     transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
 
    .overlay{
-       background: rgba(0,0,0,0.4);
+       background: rgba(0,0,0,0.2);
        height: 100%;
        width: 100%;
        position: absolute;
    }
-
-   /*.app-container{*/
-       /*height: 100%;*/
-   /*}*/
 
     &, &:hover{
         transition: all 100ms linear;
@@ -32,14 +27,13 @@ $background-color:  #ff9400;
     img{
         height: 100%;
         width: 100%;
+        display:block;
     }
 
     &:focus{
         cursor: pointer;
         z-index:9999;
-        box-shadow: 0px 31px 70px -29px rgba(0,0,0,0.75);
-        -ms-transform: scale(1.2) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
-        transform: scale(1.2) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
+        transform: scale(1.1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
 
         .overlay{
             background: rgba(0,0,0,0.0);

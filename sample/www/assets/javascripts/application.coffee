@@ -4,10 +4,9 @@
 
 #= require_directory .
 #= require_directory ./vue
-#= require_directory ./bootstrap
+#= require_directory ./vuetify
 #= require_directory ./common
 #= require_directory ./spatial-navigation
-#= require_directory ./bootstrap-switch
 #= require_tree ../../widgets
 #= require_directory ./init
 

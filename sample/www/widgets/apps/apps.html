@@ -1,5 +1,7 @@
 <script type="text/x-template" id="apps-template">
-    <div class="apps-widget row">
-        <app-widget v-for="app in apps" :key="app.name" :app="app"></app-widget>
+    <div class="apps-widget">
+        <v-layout row wrap>
+            <app-widget v-for="app in apps" :key="app.name" :app="app"></app-widget>
+        </v-layout>
     </div>
 </script>
