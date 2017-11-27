@@ -19,13 +19,5 @@
     <div id="container" class="container-fluid">
       <%! yield %>
     </div>
-
-    <% if development { %>
-      <div id="saving-instructions">
-        <p>Paste the following at the top of <i><%= dashboard %>.gerb</i></p>
-        <textarea id="gridster-code"></textarea>
-      </div>
-      <a href="#saving-instructions" id="save-gridster">Save this layout</a>
-    <% } %>
   </body>
 </html>
