@@ -1,5 +1,13 @@
 <script type="text/x-template" id="hello-world-template">
-    <div class="switch-widget data-navigable">
-        <v-switch value input-value="true" v-bind:label="service.name">{{service.name}}</v-switch>
+    <div class="switch-widget data-navigable"
+         v-on:focus="onFocus"
+         v-on:blur="onBlur">
+        <v-switch
+                v-bind:label="service.name"
+                v-model="state"
+                v-on:change="onChange"
+                v-bind:disabled="disabled"
+                v-bind:hint="response"
+                v-bind:persistent-hint="true">{{service.name}}</v-switch>
     </div>
 </script>

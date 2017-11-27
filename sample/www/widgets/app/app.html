@@ -1,6 +1,10 @@
 <script type="text/x-template" id="app-template">
     <v-flex class="md4 pa-2">
-        <div v-on:click="open" class="app-widget elevation-3 data-navigable">
+        <div
+                class="app-widget elevation-3 data-navigable"
+                v-on:click="open"
+                v-on:focus="onFocus"
+                v-on:blur="onBlur">
             <div class="overlay"></div>
             <img :src="app.icon">
         </div>

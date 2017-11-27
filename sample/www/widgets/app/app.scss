@@ -8,9 +8,10 @@ $background-color:  #ff9400;
 // ----------------------------------------------------------------------------
 .app-widget {
 
-    background-color: $background-color;
-    margin-bottom:24px;
-    transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
+        background-color: $background-color;
+        margin-bottom:24px;
+       transition: all 100ms linear;
+        transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
 
    .overlay{
        background: rgba(0,0,0,0.2);
@@ -18,11 +19,6 @@ $background-color:  #ff9400;
        width: 100%;
        position: absolute;
    }
-
-    &, &:hover{
-        transition: all 100ms linear;
-
-    }
 
     img{
         height: 100%;

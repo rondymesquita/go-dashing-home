@@ -2,7 +2,8 @@ $background-color:  rgb(0,150,166);
 
 .switch-widget {
 
-padding: 6px;
+    padding: 6px;
+    transition: all 100ms linear;
   
   .title{
   	font-size: 24px;
@@ -10,15 +11,12 @@ padding: 6px;
   }
 
   label{
-      width:100%;
-      display: block;
+      font-size:16px;
   }
 
   &:focus{
       background-color:  rgba(255,255,255,0.3);
        z-index:9999;
-       box-shadow: 0px 31px 70px -29px rgba(0,0,0,0.75);
-       /*transform: scale(1.1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);*/
    }
 
 }
