@@ -1,7 +1,8 @@
 <script type="text/x-template" id="hello-world-template">
     <div class="switch-widget data-navigable"
          v-on:focus="onFocus"
-         v-on:blur="onBlur">
+         v-on:blur="onBlur"
+         v-on:keyup.enter="onEnter">
         <v-switch
                 v-bind:label="service.name"
                 v-model="state"

@@ -18,7 +18,7 @@
                 },
                 messageTimeout: 5000,
                 classes: {
-                    HIGHLIGHT: ['lighten-2', 'elevation-3']
+                    HIGHLIGHT: ['grey', 'lighten-3', 'elevation-5']
                 }
             }
         },
@@ -30,7 +30,11 @@
             this.$data.deferred.resolve("switch mounted");
         },
         methods: {
-            onChange: function (event, state) {
+            onEnter: function(event){
+                this.state = !this.state;
+                this.onChange();
+            },
+            onChange: function (event) {
                 var self = this;
 
                 this.disabled = true;

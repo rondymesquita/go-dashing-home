@@ -25,18 +25,15 @@
                 event.target.classList.remove(...this.classes.HIGHLIGHT);
             },
             open: function () {
-                $.ajax({
-                    url: "/command/exec",
-                    type: "POST",
-                    data: "{\"Commands\": [[\"echo\", \"hello\"], [\"firefox\"]]}",
-                    dataType: "json"
-                }).done(function (data, text, jq) {
-                    console.log("success")
-                    console.log(data)
-                }).fail(function (data, text, jq) {
-                    console.log("fail")
-                    console.log(data)
-                });
+                console.log("open", this.app.shell);
+                new ShellExecuter()
+                    .shell(this.app.shell)
+                    .execute()
+                    .done(function (data, text, xhr) {
+                        console.log("success");
+                    }).fail(function (xhr, status, error) {
+                        console.log("fail", status, error);
+                    });
             }
         }
     });
