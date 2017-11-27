@@ -25,27 +25,19 @@
         beforeMount: function(){
             this.state = true;
             var self = this;
-            // new ShellExecuter()
-            //     .shell(this.service.shell_status)
-            //     .execute()
-            //     .done(function (data, text, xhr) {
-            //         console.log("success");
-            //         self.showResponseMessage(self.message.SUCCESS);
-            //     }).fail(function (xhr, status, error) {
-            //         console.log("fail", status, error);
-            //         self.state = false;
-            //         self.showResponseMessage(self.message.FAIL);
-            //     });
-            // var source = new EventSource('events');
-            // source.addEventListener('open', function(e){
-            //     console.log("Connection yay!!!", e)
-            // });
 
-            source.addEventListener('message', function(e){
-                if(JSON.parse(e.data).id == "fulano"){
-                    console.log("fulano: ", e);
+            window.source.addEventListener('message', function(e){
+                data = JSON.parse(e.data)
+                if(data.id == self.service.id){
+                    console.log(self.service.id, " : ", data);
+                    if (data.error){
+                        self.state = false;
+                    }else{
+                        self.state = true;
+                    }
+
                 }
-
+                
             });
         },
         mounted: function () {

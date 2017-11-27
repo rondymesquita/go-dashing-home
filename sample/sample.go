@@ -4,9 +4,7 @@ import (
 	"log"
 
 	dashing "github.com/znly/go-dashing"
-	"github.com/znly/go-dashing/jobs/buzzwords"
-	"github.com/znly/go-dashing/jobs/convergence"
-	"github.com/znly/go-dashing/jobs/sample"
+	"github.com/znly/go-dashing/go-dashing-home/sample/jobs/sample"
 	"github.com/znly/go-dashing/go-dashing-home/sample/routers"
 )
 
@@ -18,14 +16,14 @@ func main() {
 	}
 
 	routes := []*dashing.CustomRoute{}
-	commandRouter := &routers.CommandRouter{}
+	router := &routers.ShellRouter{}
 
-	routes = append(routes, commandRouter.Routes()...)
+	routes = append(routes, router.Routes()...)
 
 	dashingDashboards.ConfigureCustomRoutes(routes)
 
 	// Register default sample jobs
-	dashingDashboards.Register(sample.GetJob(), convergence.GetJob(), buzzwords.GetJob())
+	dashingDashboards.Register(sample.GetJob())
 
 	// Start the server
 	log.Fatal(dashingDashboards.Start())
