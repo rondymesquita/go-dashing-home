@@ -26,7 +26,7 @@ func (j *Job) Work(send chan *dashingtypes.Event) {
 			send <- &dashingtypes.Event{"qbittorrent", map[string]interface{}{
 				"status": output,
 				"error":  error,
-			}, "qbittorrent"}
+			}, ""}
 
 			executer = shell.Executer{}
 			output, err = executer.Exec("status_plex.sh")
@@ -38,7 +38,7 @@ func (j *Job) Work(send chan *dashingtypes.Event) {
 			send <- &dashingtypes.Event{"plex", map[string]interface{}{
 				"status": output,
 				"error":  error,
-			}, "plex"}
+			}, ""}
 		}
 	}
 }

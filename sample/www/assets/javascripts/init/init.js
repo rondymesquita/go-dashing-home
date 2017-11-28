@@ -6,46 +6,14 @@ $(document).ready(function(){
     });
 
     window.vm = new Vue({
-        el: '#app'
-    });
-
-    appPromise = appWidget.options.data().promise;
-
-    //This is returning only the last switch created because the deferred object on switch compoment is being overrided.
-    // Need to fix this to verify all switches instead only the last one.
-    switchPromise = switchWidget.options.data().promise;
-
-    $.when(appPromise, switchPromise).done(function(data, data2){
-        console.log(data, data2)
-        SpatialNavigation.init();
-        SpatialNavigation.add({
-            selector: '.data-navigable'
-        });
-
-        SpatialNavigation.makeFocusable();
-        SpatialNavigation.focus();
-
-        var onMouseEnter = function (event) {
-            SpatialNavigation.focus(event.target);
-        };
-        var onMouseLeave = function(event){
-            blurAllNavigableElements();
-        };
-
-        var blurAllNavigableElements = function(){
-            var navigableElements = document.querySelectorAll(".data-navigable");
-            for(var i =0; i < navigableElements.length; i++){
-                navigableElements[i].blur()
-            }
-        };
-
-        var navigableElements = document.querySelectorAll(".data-navigable");
-
-        for(var i =0; i < navigableElements.length; i++){
-            navigableElements[i].addEventListener("mouseenter", onMouseEnter);
-            navigableElements[i].addEventListener("mouseleave", onMouseLeave);
+        el: '#app',
+        created: function(){
+            console.log("vm created");
+        },
+        mounted: function(){
+            console.log("vm mounted");
         }
-    })
+    });
 
 });
 

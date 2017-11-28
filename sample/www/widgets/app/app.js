@@ -1,21 +1,14 @@
 (function () {
-    var deferred = jQuery.Deferred();
-    var promise = deferred.promise();
 
     window.appWidget = Vue.component('app-widget', {
         template: '#app-template',
         props: ['app'],
         data: function () {
             return {
-                deferred: deferred,
-                promise: promise,
                 classes: {
                     HIGHLIGHT: ['elevation-8']
                 }
             }
-        },
-        mounted: function () {
-            this.$data.deferred.resolve("app mounted");
         },
         methods: {
             onFocus: function (event) {

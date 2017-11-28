@@ -1,14 +1,10 @@
 (function () {
-    var deferred = jQuery.Deferred();
-    var promise = deferred.promise();
 
     window.switchWidget = Vue.component('switch-widget', {
         template: '#hello-world-template',
         props: ['id', 'service'],
         data: function () {
             return {
-                deferred: deferred,
-                promise: promise,
                 state: false,
                 disabled: false,
                 response: "",
@@ -26,9 +22,7 @@
             this.state = true;
             var self = this;
 
-            window.source.addEventListener(self.id, function(e){
-                data = JSON.parse(e.data)
-                console.log( data);
+            vm.$on(self.id, function(data){
                 if (data.error){
                     self.state = false;
                 }else{
@@ -36,13 +30,7 @@
                 }
             });
         },
-        mounted: function () {
-            this.$data.deferred.resolve(this.id);
-        },
         methods: {
-            onData: function(){
-                console.log("data!!!!!");
-            },
             onEnter: function(event){
                 this.state = !this.state;
                 this.onChange();
@@ -104,8 +92,5 @@
             }
         }
     });
-
-    Vue.widgets = [];
-    Vue.widgets.push(window.switchWidget);
 
 })();
