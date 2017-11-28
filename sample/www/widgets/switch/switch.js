@@ -4,7 +4,7 @@
 
     window.switchWidget = Vue.component('switch-widget', {
         template: '#hello-world-template',
-        props: ['name', 'service'],
+        props: ['id', 'service'],
         data: function () {
             return {
                 deferred: deferred,
@@ -26,7 +26,7 @@
             this.state = true;
             var self = this;
 
-            window.source.addEventListener(self.service.id, function(e){
+            window.source.addEventListener(self.id, function(e){
                 data = JSON.parse(e.data)
                 console.log( data);
                 if (data.error){
@@ -37,7 +37,7 @@
             });
         },
         mounted: function () {
-            this.$data.deferred.resolve("switch mounted");
+            this.$data.deferred.resolve(this.id);
         },
         methods: {
             onData: function(){

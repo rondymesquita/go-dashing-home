@@ -10,9 +10,13 @@ $(document).ready(function(){
     });
 
     appPromise = appWidget.options.data().promise;
+
+    //This is returning only the last switch created because the deferred object on switch compoment is being overrided.
+    // Need to fix this to verify all switches instead only the last one.
     switchPromise = switchWidget.options.data().promise;
 
     $.when(appPromise, switchPromise).done(function(data, data2){
+        console.log(data, data2)
         SpatialNavigation.init();
         SpatialNavigation.add({
             selector: '.data-navigable'
