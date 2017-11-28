@@ -3,31 +3,31 @@
                 "name": "firefox",
                 "icon": "/assets/images/firefox.jpg",
                 "color": "#ff9400",
-                "shell": "open_firefox.sh"
+                "shell": "firefox_open.sh"
         },
         {
                 "name": "plex",
                 "icon": "/assets/images/plex.jpg",
                 "color": "#ff9400",
-                "shell": "open_plex.sh"
+                "shell": "plex_open.sh"
         },
         {
                 "name": "netflix",
                 "icon": "/assets/images/netflix.jpg",
                 "color": "#ff9400",
-                "shell": "open_netflix.sh"
+                "shell": "netflix_open.sh"
         },
         {
                 "name": "youtube",
                 "icon": "/assets/images/youtube.png",
                 "color": "#ff9400",
-                "shell": "open_youtube.sh"
+                "shell": "youtube_open.sh"
         },
         {
-                "name": "unified remote",
+                "name": "unified_remote",
                 "icon": "/assets/images/unified-remote.jpg",
                 "color": "#ff9400",
-                "shell": "open_unified_remote.sh"
+                "shell": "unified_remote_open.sh"
         }
 
 
