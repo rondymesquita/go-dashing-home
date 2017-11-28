@@ -13,7 +13,6 @@ $(document).ready(function(){
     switchPromise = switchWidget.options.data().promise;
 
     $.when(appPromise, switchPromise).done(function(data, data2){
-        console.log(data, data2)
         SpatialNavigation.init();
         SpatialNavigation.add({
             selector: '.data-navigable'

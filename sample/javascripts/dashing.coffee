@@ -92,6 +92,7 @@ Dashing.widgets = widgets = {}
 Dashing.lastEvents = lastEvents = {}
 Dashing.debugMode = false
 
+###
 source = new EventSource('events')
 source.addEventListener 'open', (e) ->
   console.log("Connection opened", e)
@@ -120,6 +121,7 @@ source.addEventListener 'dashboards', (e) ->
     console.log("Received data for dashboards", data)
   if data.dashboard is '*' or window.location.pathname is "/#{data.dashboard}"
     Dashing.fire data.event, data
+###
 
 $(document).ready ->
   Dashing.run()

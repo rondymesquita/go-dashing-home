@@ -26,18 +26,14 @@
             this.state = true;
             var self = this;
 
-            window.source.addEventListener('message', function(e){
+            window.source.addEventListener(self.service.id, function(e){
                 data = JSON.parse(e.data)
-                if(data.id == self.service.id){
-                    console.log(self.service.id, " : ", data);
-                    if (data.error){
-                        self.state = false;
-                    }else{
-                        self.state = true;
-                    }
-
+                console.log( data);
+                if (data.error){
+                    self.state = false;
+                }else{
+                    self.state = true;
                 }
-                
             });
         },
         mounted: function () {
@@ -45,7 +41,7 @@
         },
         methods: {
             onData: function(){
-
+                console.log("data!!!!!");
             },
             onEnter: function(event){
                 this.state = !this.state;
@@ -108,5 +104,8 @@
             }
         }
     });
+
+    Vue.widgets = [];
+    Vue.widgets.push(window.switchWidget);
 
 })();
