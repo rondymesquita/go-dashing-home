@@ -12,7 +12,7 @@
                     SUCCESS: "Sucesso!",
                     FAIL: "Falha!"
                 },
-                messageTimeout: 5000,
+                messageTimeout: 1000,
                 classes: {
                     HIGHLIGHT: ['grey', 'lighten-3', 'elevation-5']
                 }
@@ -23,6 +23,7 @@
             var self = this;
 
             vm.$on(self.id, function(data){
+                console.log(data);
                 if (data.error){
                     self.state = false;
                 }else{

@@ -11,32 +11,32 @@ type Job struct{}
 
 // Work implements job interface
 func (j *Job) Work(send chan *dashingtypes.Event) {
-	ticker := time.NewTicker(1 * time.Second)
+	ticker := time.NewTicker(3 * time.Second)
 	for {
 		select {
 		case <-ticker.C:
 
 			executer := shell.Executer{}
-			output, err := executer.Exec("status_qbittorrent.sh")
+			output, err := executer.Exec("qbittorrent_status.sh")
 			error := ""
 			if err != nil {
 				error = err.Error()
 			}
 
 			send <- &dashingtypes.Event{"qbittorrent", map[string]interface{}{
-				"status": output,
+				"output": output,
 				"error":  error,
 			}, ""}
 
 			executer = shell.Executer{}
-			output, err = executer.Exec("status_plex.sh")
+			output, err = executer.Exec("plex_status.sh")
 			error = ""
 			if err != nil {
 				error = err.Error()
 			}
 
 			send <- &dashingtypes.Event{"plex", map[string]interface{}{
-				"status": output,
+				"output": output,
 				"error":  error,
 			}, ""}
 		}

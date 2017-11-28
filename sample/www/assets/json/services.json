@@ -4,23 +4,15 @@
     "id": "qbittorrent",
     "icon": "/assets/images/firefox.jpg",
     "shell_start": "qbittorrent_start.sh",
-    "shell_stop": "qbittorrent_stop.sh",
-    "shell_status": "qbittorrent_status.sh"
+    "shell_status": "qbittorrent_status.sh",
+    "shell_stop": "qbittorrent_stop.sh"
   },
   {
     "name": "Plex",
     "id": "plex",
     "icon": "/assets/images/firefox.jpg",
     "shell_start": "plex_start.sh",
-    "shell_stop": "plex_stop.sh",
-    "shell_status": "plex_status.sh"
-  },
-  {
-    "name": "Unified Remote",
-    "id": "unified_remote",
-    "icon": "/assets/images/firefox.jpg",
-    "shell_start": "unified_remote_start.sh",
-    "shell_stop": "unified_remote_stop.sh",
-    "shell_status": "unified_remote_status.sh"
+    "shell_status": "plex_status.sh",
+    "shell_stop": "plex_stop.sh"
   }
 ]
