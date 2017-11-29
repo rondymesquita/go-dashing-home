@@ -24,8 +24,8 @@
                 "shell": "youtube_open.sh"
         },
         {
-                "name": "qbittorrent",
-                "icon": "/assets/images/netflix.jpg",
+                "name": "emulation_station",
+                "icon": "/assets/images/emulationstation.png",
                 "color": "#ff9400",
                 "shell": "unified_remote_open.sh"
         }
