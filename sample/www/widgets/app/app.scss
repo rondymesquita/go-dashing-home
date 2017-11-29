@@ -8,44 +8,43 @@ $background-color:  #ff9400;
 // ----------------------------------------------------------------------------
 .app-widget {
 
-       margin-bottom:24px;
-       transition: all 100ms linear;
-       transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
+   margin-bottom:24px;
+   transition: all 100ms linear;
+   transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
 
-   .overlay{
-       background: rgba(0,0,0,0.2);
-       height: 100%;
-       width: 100%;
-       position: absolute;
-   }
+.overlay{
+    background: rgba(0,0,0,0.2);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
 
-   .white-overlay{
-       background: rgba(255,255,255,0.0);
-       height: 100%;
-       width: 100%;
-       position: absolute;
-   }
+.white-overlay{
+    background: rgba(255,255,255,0.0);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
 
-    img{
-        height: 100%;
-        width: 100%;
-        display:block;
-    }
+img{
+    height: 100%;
+    width: 100%;
+    display:block;
+}
 
-    &:focus{
-        cursor: pointer;
-        z-index: 999;
-        transform: scale(1.1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
+&:focus{
+     cursor: pointer;
+     transform: scale(1.1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
 
-        .overlay{
-            background: rgba(0,0,0,0.0);
-        }
-    }
+.overlay{
+    background: rgba(0,0,0,0.0);
+}
+}
 
-    &:active{
-        .white-overlay{
-                background: rgba(255,255,255,0.4);
-        }
-     }
+&:active{
+.white-overlay{
+    background: rgba(255,255,255,0.4);
+}
+}
 
 }

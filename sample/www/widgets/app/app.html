@@ -1,14 +1,13 @@
 <script type="text/x-template" id="app-template">
-    <v-flex class="sm4 pa-2 app-widget data-navigable"
-            v-on:click="open"
-            v-on:keyup.enter="open"
-            v-on:focus="onFocus"
-            v-on:blur="onBlur">
-        <v-card
-            ripple
-            dark
-            tile>
-            <v-card-media :src="app.icon" height="180px"></v-card-media>
-        </v-card>
+    <v-flex class="sm4 pa-2">
+        <div
+                class="app-widget elevation-3 data-navigable"
+                v-on:click="open"
+                v-on:keyup.enter="open"
+                v-on:focus="onFocus"
+                v-on:blur="onBlur">
+            <div class="white-overlay"></div>
+            <img :src="app.icon"/>
+        </div>
     </v-flex>
 </script>
