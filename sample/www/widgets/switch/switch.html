@@ -4,11 +4,13 @@
          v-on:blur="onBlur"
          v-on:keyup.enter="onEnter">
         <v-switch
-                v-bind:label="service.name"
+                color="primary"
                 v-model="state"
                 v-on:change="onChange"
                 v-bind:disabled="disabled"
                 v-bind:hint="response"
-                v-bind:persistent-hint="true">{{service.name}}</v-switch>
+                v-bind:persistent-hint="true">
+            <span slot="label">{{service.name}}</span>
+        </v-switch>
     </div>
 </script>

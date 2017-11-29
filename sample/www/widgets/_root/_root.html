@@ -1,7 +1,17 @@
 <script type="text/x-template" id="root-template">
-    <v-app>
+    <v-app class="grey lighten-3">
+        <v-toolbar dark color="primary" class="elevation-0">
+            <v-btn icon>
+                <v-icon>home</v-icon>
+            </v-btn>
+            <v-toolbar-title class="white--text">Home Automation</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-avatar :tile="tile" class="grey lighten-4">
+                <img src="/static/apple-touch-icon-180x180.png" alt="avatar">
+            </v-avatar>
+        </v-toolbar>
         <v-content>
-            <v-container>
+            <v-container fluid>
                 <v-layout row wrap>
                     <v-flex md3>
                         <services-widget></services-widget>

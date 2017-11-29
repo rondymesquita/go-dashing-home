@@ -1,2 +1,2 @@
 #!/bin/bash
-docker stop fulano
+docker stop fulano2

@@ -14,5 +14,14 @@
     "shell_start": "plex_start.sh",
     "shell_status": "plex_status.sh",
     "shell_stop": "plex_stop.sh"
+  },
+  {
+    "name": "Unified Remote",
+    "id": "unified_remote",
+    "icon": "/assets/images/firefox.jpg",
+    "shell_start": "unified_remote_start.sh",
+    "shell_status": "unified_remote_status.sh",
+    "shell_stop": "unified_remote_stop.sh"
   }
+
 ]

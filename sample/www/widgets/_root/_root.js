@@ -18,6 +18,7 @@ Vue.component('root-widget', {
             }
         });
         console.log("root mounted")
+
     },
     methods: {
         startMessageListener: function () {

@@ -1,2 +1,2 @@
 #!/bin/bash
-docker start ubuntu
+docker start fulano1

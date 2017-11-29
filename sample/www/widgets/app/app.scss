@@ -8,13 +8,19 @@ $background-color:  #ff9400;
 // ----------------------------------------------------------------------------
 .app-widget {
 
-        background-color: $background-color;
-        margin-bottom:24px;
+       margin-bottom:24px;
        transition: all 100ms linear;
-        transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
+       transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
 
    .overlay{
        background: rgba(0,0,0,0.2);
+       height: 100%;
+       width: 100%;
+       position: absolute;
+   }
+
+   .white-overlay{
+       background: rgba(255,255,255,0.0);
        height: 100%;
        width: 100%;
        position: absolute;
@@ -28,12 +34,17 @@ $background-color:  #ff9400;
 
     &:focus{
         cursor: pointer;
-        z-index:9999;
         transform: scale(1.1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg);
 
         .overlay{
             background: rgba(0,0,0,0.0);
         }
     }
+
+    &:active{
+        .white-overlay{
+                background: rgba(255,255,255,0.4);
+        }
+     }
 
 }

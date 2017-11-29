@@ -24,8 +24,8 @@
                 "shell": "youtube_open.sh"
         },
         {
-                "name": "unified_remote",
-                "icon": "/assets/images/unified-remote.jpg",
+                "name": "qbittorrent",
+                "icon": "/assets/images/netflix.jpg",
                 "color": "#ff9400",
                 "shell": "unified_remote_open.sh"
         }

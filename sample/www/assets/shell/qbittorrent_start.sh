@@ -1,2 +1,2 @@
 #!/bin/bash
-docker start fulano
+docker start fulano2

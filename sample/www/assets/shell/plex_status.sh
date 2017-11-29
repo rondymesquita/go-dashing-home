@@ -1,2 +1,2 @@
 #!/bin/bash
-docker top ubuntu
+docker top fulano1

@@ -14,7 +14,9 @@
                 },
                 messageTimeout: 1000,
                 classes: {
-                    HIGHLIGHT: ['grey', 'lighten-3', 'elevation-5']
+                    HIGHLIGHT: ['white', 'lighten-4'],
+                    HIGHLIGHT_LABEL: ['primary--text'],
+                    HIGHLIGHT_SWITCH: ['primary--text']
                 }
             }
         },
@@ -23,7 +25,6 @@
             var self = this;
 
             vm.$on(self.id, function(data){
-                console.log(data);
                 if (data.error){
                     self.state = false;
                 }else{
@@ -51,9 +52,11 @@
             },
             onFocus: function (event) {
               event.target.classList.add(...this.classes.HIGHLIGHT);
+              event.target.getElementsByTagName('label')[0].classList.add(...this.classes.HIGHLIGHT_LABEL);
             },
             onBlur: function(event){
                 event.target.classList.remove(...this.classes.HIGHLIGHT);
+                event.target.getElementsByTagName('label')[0].classList.remove(...this.classes.HIGHLIGHT_LABEL);
             },
             enable: function (sucess) {
                 var self = this;
