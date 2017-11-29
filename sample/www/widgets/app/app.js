@@ -12,10 +12,10 @@
         },
         methods: {
             onFocus: function (event) {
-                // event.target.classList.add(...this.classes.HIGHLIGHT);
+                event.target.getElementsByClassName('card')[0].classList.add(...this.classes.HIGHLIGHT);
             },
             onBlur: function(event){
-                // event.target.classList.remove(...this.classes.HIGHLIGHT);
+                event.target.getElementsByClassName('card')[0].classList.remove(...this.classes.HIGHLIGHT);
             },
             open: function () {
                 console.log("open", this.app.shell);
